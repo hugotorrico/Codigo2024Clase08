@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,19 +14,36 @@ namespace CodigoClase08
     {
 
         #region Propiedades
+
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public double Sueldo { get; set; }
+        
         //prop + tap y se genera la propiedad
-        public string  TipoDocumento { get; set; }
+        public string TipoDocumento { get; set; }
         public int EscalaSalarial { get; set; }
+        public DateTime FechaNacimiento { get; set; }
+        public DateTime FechaIngreso { get; set; }
 
         #endregion
+        
 
+        public int ObtenerAnniosTrabajados()
+        {
+            int anniosTrabajados = DateAndTime.Now.Year - FechaIngreso.Year;
+            return anniosTrabajados;
+        }
+          
         //No tengo una propiedad llamada nombres completos
         public string ObtenerNombresCompletos()
         {
             return Nombres + " " + Apellidos;
+        }
+
+        public int CalcularEdad()
+        {
+            int edad = DateAndTime.Now.Year - FechaNacimiento.Year;
+            return edad;
         }
 
         //Si tengo una propiedad llamada asignar Sueldo
@@ -44,8 +63,9 @@ namespace CodigoClase08
             }
         }
 
-
        
+       
+        
        
 
 
