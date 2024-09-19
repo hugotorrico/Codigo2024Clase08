@@ -102,9 +102,44 @@ void CuartaForma()
 }
 
 
-Estudiante estudiante = new Estudiante();
-estudiante.Nombres = "Hugp";
-estudiante.Apellidos = "Torrico";
+Estudiante estudiante = new Estudiante
+{
+    Nombres = "Hugo",
+    Apellidos = "Torrico",
+    Notas = new List<int>()
+};
+estudiante.Notas.Add(20);
+estudiante.Notas.Add(18);
+
+Console.WriteLine(estudiante.CalcularPromedio());
+
+
+EstudianteIntercambio estudianteIntercambio = new EstudianteIntercambio
+{
+    Nombres="James",
+    Apellidos="Rodriguez",
+    Materias= new List<string>(),
+    Notas= new List<int>(),
+    Pais = "Colombia",
+    Ciudad = "Bogotá",
+    Pasaporte = "455245201"
+};
+
+Reingresante reingresante = new Reingresante
+{
+    Nombres = "Brandon",
+    AnnioReingreso = 2024,
+    Motivo = "Enfermedad temporal",
+    Notas = new List<int>()
+};
+
+reingresante.Notas.Add(20);
+reingresante.Notas.Add(12);
+
+Console.WriteLine("El promedio del reingresante es ;");
+Console.WriteLine(reingresante.CalcularPromedio());
+
+
 
 
 Console.Read();
